@@ -1,0 +1,68 @@
+Enter password: **********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 47
+Server version: 8.0.26 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| details            |
+| employee           |
+| information_schema |
+| moviedb            |
+| mysql              |
+| performance_schema |
+| student            |
+| studentdb          |
+| sys                |
++--------------------+
+9 rows in set (0.05 sec)
+
+mysql> use moviedb;
+Database changed
+mysql> CREATE TABLE   favmov
+    ->     (
+    ->     mov_name varchar(255),
+    ->     actor varchar(255),
+    ->     year int,
+    ->     director varchar(255)
+    ->     );
+Query OK, 0 rows affected (0.17 sec)
+
+mysql> INSERT INTO favmov(mov_name, actor, year, director)
+    ->       VALUES('Luca','jacob Tremblay', '2021', 'Enrico Casarosa');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO favmov(mov_name, actor, year, director)
+    ->      VALUES('Coco', 'Anthony Gonzales', '2017', 'Adriel Molina');
+Query OK, 1 row affected (0.01 sec)
+
+mysql>  INSERT INTO favmov(mov_name, actor, year, director)
+    ->        VALUES('Amazing Spiderman', 'Andrew Garfield','2012','Marc Webb');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO favmov(mov_name, actor, year, director)
+    ->       VALUES('Iron Man', 'Robert Downey','2008', 'Jon Favreau');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT mov_name, actor FROM favmov;
++-------------------+------------------+
+| mov_name          | actor            |
++-------------------+------------------+
+| Luca              | jacob Tremblay   |
+| Coco              | Anthony Gonzales |
+| Amazing Spiderman | Andrew Garfield  |
+| Iron Man          | Robert Downey    |
++-------------------+------------------+
+4 rows in set (0.00 sec)
+
+mysql>
